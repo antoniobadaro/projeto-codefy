@@ -7,20 +7,15 @@ import java.util.List;
 
 public class Usuario {
     private String nome;
-    private int idade;
-    private int id;
+    private Integer idade;
+    private Integer id;
+    private String senha;
     private boolean assinante;
     private List<Playlist> minhasPlaylists;
 
-
-    //Construtor
-
-
-    public Usuario(String nome, int idade, int id) {
-        this.nome = nome;
-        this.idade = idade;
-        this.id = id;
-        minhasPlaylists = new ArrayList<>();
+    public Usuario() {
+        this.assinante = false;
+        minhasPlaylists=new ArrayList<>();
     }
 
     //Métodos da classe
@@ -30,12 +25,33 @@ public class Usuario {
     public boolean cancelarPlano(){
         return this.assinante=false;
     }
-    public void criarPlaylist(String nomeDaPlaylist){ //Esse método cria uma instância da classe Playlist passando como parâmetros do construtor a propria instancia do Usuario que está chamando o método CriarPalylist e o nome da playlist
-        Playlist novaPlaylist=new Playlist(this, nomeDaPlaylist);
+    public void adicionarPlaylist(Playlist novaPlaylist){ // Adiciona uma playlist que foi criada dentro do menu do usuário na classe Main
         minhasPlaylists.add(novaPlaylist);
+        novaPlaylist.setIdDaPlaylist(minhasPlaylists.indexOf(novaPlaylist));
+    }
+
+    public void excluirPlaylist(Playlist playlist){
+        minhasPlaylists.remove(playlist);
+        System.out.println("playlist removida");
+    }
+
+    public void lisarPlaylist(){
+        for(int i=0;i<minhasPlaylists.size();i++){
+            System.out.println("ID: "+i+" Playlist: "+ minhasPlaylists.get(i).getNomeDaPlaylist());
+        }
     }
 
     //getter e setter necessários
+
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -69,12 +85,17 @@ public class Usuario {
 
     @Override
     public String toString() {
+        List<String> nomesDasPlaylists=new ArrayList<>();
+        for (int i=0;i<minhasPlaylists.size();i++){ //uma lista que armazena apenas os nomes das playlists para poder exibir
+            nomesDasPlaylists.add(minhasPlaylists.get(i).getNomeDaPlaylist());
+
+        }
         return "Usuario{" +
                 "nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", id=" + id +
                 ", assinante=" + assinante +
-                ", minhasPlaylists=" + minhasPlaylists +
+                ", minhasPlaylists=" + nomesDasPlaylists +//exibe só os nomes da playlist para a tela não ficar saturada de informações
                 '}';
     }
 }

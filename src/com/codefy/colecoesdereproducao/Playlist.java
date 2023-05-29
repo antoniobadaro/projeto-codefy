@@ -12,11 +12,8 @@ public class Playlist implements AcoesDeListas {
     private List<Musica>musicasDaPlaylist;
     private String nomeDaPlaylist;
 
+    private Integer idDaPlaylist;
 
-    public Playlist(Usuario autor, String nomeDaPlaylist) {
-        this.autor = autor;
-        this.nomeDaPlaylist = nomeDaPlaylist;
-    }
 
     //Métodos da classe
     public void adicionarMusica(Musica musica){
@@ -27,6 +24,16 @@ public class Playlist implements AcoesDeListas {
     }
 
     //getter e setter necessários
+
+
+    public Integer getIdDaPlaylist() {
+        return idDaPlaylist;
+    }
+
+    public void setIdDaPlaylist(Integer idDaPlaylist) {
+        this.idDaPlaylist = idDaPlaylist;
+    }
+
     public List<Musica> getMusicasDaPlaylist() {
         return musicasDaPlaylist;
     }
@@ -37,6 +44,10 @@ public class Playlist implements AcoesDeListas {
 
     public void setNomeDaPlaylist(String nomeDaPlaylist) {
         this.nomeDaPlaylist = nomeDaPlaylist;
+    }
+
+    public void setAutor(Usuario autor) {
+        this.autor = autor;
     }
 
     //Métodos sobrescritos da interface com.codefy.interfaces.AcoesDeListas
