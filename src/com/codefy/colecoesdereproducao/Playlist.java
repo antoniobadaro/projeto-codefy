@@ -4,6 +4,7 @@ import com.codefy.interfaces.AcoesDeListas;
 import com.codefy.servicos.Musica;
 import com.codefy.usuario.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Playlist implements AcoesDeListas {
@@ -14,6 +15,9 @@ public class Playlist implements AcoesDeListas {
 
     private Integer idDaPlaylist;
 
+    public Playlist() {
+        this.musicasDaPlaylist = new ArrayList<>();
+    }
 
     //Métodos da classe
     public void adicionarMusica(Musica musica){
@@ -59,5 +63,16 @@ public class Playlist implements AcoesDeListas {
     @Override
     public void retrocederFaixa() {
 
+    }
+
+    @Override
+    public String toString() {
+        List<String> nomeDaMusica=new ArrayList<>();
+        for(int j=0;j<musicasDaPlaylist.size();j++){
+            nomeDaMusica.add(musicasDaPlaylist.get(j).getNomeFaixa());
+        }
+        return "Playlist{" +
+                "musicasDaPlaylist=" + nomeDaMusica +
+                '}';
     }
 }

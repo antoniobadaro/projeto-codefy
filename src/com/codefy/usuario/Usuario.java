@@ -35,9 +35,9 @@ public class Usuario {
         System.out.println("playlist removida");
     }
 
-    public void lisarPlaylist(){
-        for(int i=0;i<minhasPlaylists.size();i++){
-            System.out.println("ID: "+i+" Playlist: "+ minhasPlaylists.get(i).getNomeDaPlaylist());
+    public void listarPlaylist(){
+        for(int i=0;i<getMinhasPlaylists().size();i++){
+            System.out.println(" Playlist: "+ minhasPlaylists.get(i).getNomeDaPlaylist()+" | ID: "+i);
         }
     }
 

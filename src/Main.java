@@ -1,42 +1,25 @@
 import com.codefy.colecoesdereproducao.Playlist;
+
 import com.codefy.servicos.Musica;
 import com.codefy.usuario.ManipulacaoDeUsuario;
 import com.codefy.usuario.Usuario;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        //Instanciar algumas Músicas
-        /*Usuario antonio =new Usuario("Antonio", 22, 1105);
-        antonio.criarPlaylist("Rock nacional");
-        antonio.criarPlaylist("Rock internacional");
-        Playlist novaPlaylist = new Playlist(antonio, "Rock");
-
-
-
-        List<Playlist> exibriPlaylist= antonio.getMinhasPlaylists();
-
-        System.out.println(novaPlaylist);*/
-
-
-
-
-
-
-
-
-
-
-
 
 
         Scanner scanner = new Scanner(System.in);
         ManipulacaoDeUsuario manipulacaoDeUsuario=new ManipulacaoDeUsuario(); //instância da classe auxiliar ManipulacaoDeUsuario para poder implementar algumas funcionalidades
-        Usuario usuarioParManipulacao = new Usuario(); //usuário instanciado para servir de classe auxiliar para manipular algumas funções da classe Playlist
 
-        //instanciar algumas músicas para testar
+        List<Musica> musicasDeTeste =new ArrayList<>();
+        musicasDeTeste.add(new Musica(120,"Dia Especial","Pouca Vogal"));
+        musicasDeTeste.add(new Musica(185,"Como tudo deve ser","CBJR"));
+        musicasDeTeste.add(new Musica(120,"Vamos fugir","Skank"));
 
         //TELA DE MENU INICIAL
         System.out.println("*** BEM-VINDO AO CODEFY ***");
@@ -62,13 +45,13 @@ public class Main {
                         novoUsuario.setSenha(scanner.nextLine());
                         manipulacaoDeUsuario.adicionarUsuario(novoUsuario);
                         System.out.println("Usuário criado com sucesso!");
-                        System.out.println(novoUsuario.toString());
+                        System.out.println(novoUsuario);
                         System.out.println();
                     }
                     case 2 -> { //Entra em uma conta que já tenha sido cadastrada
                         //VALICAÇÃO DA CONTA DO USUÁRIO
                         System.out.println("ID do usuário: ");
-                        Integer id= scanner.nextInt();
+                        int id= scanner.nextInt();
                         scanner.nextLine();
 
                         System.out.println("Senha: ");
@@ -78,16 +61,17 @@ public class Main {
                         try{ //tratamento de exeção IndexOutOfBoundsException, pois caso o id passado (que equeivale ao indice) esteja fora do limite da lista o programa não será interrompido
                             if(manipulacaoDeUsuario.getListaDeUsuarios().get(id).getSenha().equals(senha)) {
                                 int op = 0;
-                                while (op != 7) {
+                                while (op != 8) {
                                     System.out.println("Vamos lá! assine nosso plano e seja premium ou crie sua playlist");
                                     System.out.println("""
                                             1- Assinar plano
                                             2- Cancelar plano
                                             3- Criar playlist
                                             4- Excluir playlist
-                                            5-Adiconar música a uma playlist
-                                            6-exibir informaçoes do usuário
-                                            7-sair""");
+                                            5- Adiconar música a uma playlist
+                                            6- exibir informaçoes do usuário
+                                            7- Alterar nome do usuário
+                                            8- sair""");
                                     op = Integer.parseInt(scanner.nextLine());
                                     switch (op) {
                                         case 1 -> { //assina o plano
@@ -117,28 +101,43 @@ public class Main {
                                             novaPlaylist.setNomeDaPlaylist(scanner.nextLine());
                                             manipulacaoDeUsuario.getListaDeUsuarios().get(id).adicionarPlaylist(novaPlaylist);
                                             System.out.println(manipulacaoDeUsuario.getListaDeUsuarios().get(id).toString());
-                                            System.out.println("O tamanho: "+usuarioParManipulacao.getMinhasPlaylists().size());
                                             System.out.println();
                                         }
                                         case 4 -> { //exclui uma playlist
                                             System.out.println("Digite o id da playlist que deseja excluir");
-                                            manipulacaoDeUsuario.getListaDeUsuarios().get(id).lisarPlaylist();
-
-                                            int idParaExcluir=scanner.nextInt();
-                                            manipulacaoDeUsuario.getListaDeUsuarios().get(id).excluirPlaylist(usuarioParManipulacao.getMinhasPlaylists().get(idParaExcluir));
+                                            manipulacaoDeUsuario.getListaDeUsuarios().get(id).listarPlaylist();
+                                            //scanner.nextLine();
+                                            int idParaExcluir=Integer.parseInt(scanner.nextLine());
+                                            manipulacaoDeUsuario.getListaDeUsuarios().get(id).excluirPlaylist(manipulacaoDeUsuario.getListaDeUsuarios().get(id).getMinhasPlaylists().get(idParaExcluir));
 
                                             System.out.println();
 
                                         }
                                         case 5->{ //adiciona musicas a uma playlist
-                                            //adicionar musicas na playlist
-                                            //mostrar lista de musicas da playlist
+                                            System.out.println("Digite o id da playlist que deseja adicionar uma música");
+                                            manipulacaoDeUsuario.getListaDeUsuarios().get(id).listarPlaylist();
+                                            int idParaAdicioanr=Integer.parseInt(scanner.nextLine());
+                                            System.out.println("Digite o id da música que deseja adicionar");
+                                            for (int i =0; i<musicasDeTeste.size();i++){
+                                                System.out.println(musicasDeTeste.get(i).getNomeFaixa()+" | ID: "+ i);
+                                            }
+                                            int idDaMusica=Integer.parseInt(scanner.nextLine());
+                                            manipulacaoDeUsuario.getListaDeUsuarios().get(id).getMinhasPlaylists().get(idParaAdicioanr).adicionarMusica(musicasDeTeste.get(idDaMusica));
+                                            System.out.println("Musica adicionada com sucesso");
+                                            System.out.println("As músicas dessa playlist são: "+manipulacaoDeUsuario.getListaDeUsuarios().get(id).getMinhasPlaylists().get(idParaAdicioanr).toString());
                                         }
                                         case 6->{ //exibe as informações do usuário
                                             System.out.println(manipulacaoDeUsuario.getListaDeUsuarios().get(id).toString());
                                             System.out.println();
                                         }
-                                        case 7->{ //sai do menu do usuário e retorna para o menu inicial
+                                        case 7->{ //altera o nome do usuário
+                                            System.out.println("Informe o novo nome do usuário: ");
+                                            manipulacaoDeUsuario.getListaDeUsuarios().get(id).setNome(scanner.nextLine());
+                                            System.out.println(manipulacaoDeUsuario.getListaDeUsuarios().get(id).toString());
+                                            System.out.println();
+
+                                        }
+                                        case 8->{ //sai do menu do usuário e retorna para o menu inicial
                                             System.out.println("Estamos te direcionando para o menu inicial...");
                                             System.out.println();
                                         }
@@ -152,12 +151,13 @@ public class Main {
                         }catch (IndexOutOfBoundsException e){
                             System.out.println("Não encontramos o usuário");
                             System.out.println();
+                        }catch (NumberFormatException e) {
+                            System.out.println("Entrada inválida!");
+                            System.out.println();
                         }
 
                     }
-                    case 3->{
-                        System.out.println("Encerrando o Codefy");
-                    }
+                    case 3-> System.out.println("Encerrando o Codefy");
                     default -> {
                         System.out.println("Opção inválida. Escolha uma das opções listadas");
                         System.out.println();

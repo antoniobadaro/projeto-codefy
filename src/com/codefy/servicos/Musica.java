@@ -4,8 +4,8 @@ import com.codefy.classesabstratas.CatacteristicasDasFaixas;
 
 public class Musica extends CatacteristicasDasFaixas {
 
-    public Musica(Integer duracaoSeg, String nomeFaixa, String autor, boolean reproduzindo) {
-        super(duracaoSeg, nomeFaixa, autor, reproduzindo);
+    public Musica(Integer duracaoSeg, String nomeFaixa, String autor) {
+        super(duracaoSeg, nomeFaixa, autor);
         // TODO Auto-generated constructor stub
     }
 

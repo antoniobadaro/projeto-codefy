@@ -4,8 +4,8 @@ import com.codefy.classesabstratas.CatacteristicasDasFaixas;
 
 public class Podcast extends CatacteristicasDasFaixas {
 
-    public Podcast(Integer duracaoSeg, String nomeFaixa, String autor, boolean reproduzindo) {
-        super(duracaoSeg, nomeFaixa, autor, reproduzindo);
+    public Podcast(Integer duracaoSeg, String nomeFaixa, String autor) {
+        super(duracaoSeg, nomeFaixa, autor);
         // TODO Auto-generated constructor stub
     }
     @Override
