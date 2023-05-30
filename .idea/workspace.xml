@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69d14795-5d2c-4d2b-b3b4-842b33324b9c" name="Changes" comment="criação de menu">
+    <list default="true" id="6d99ff4c-5805-48c6-bf01-a96d9cdef18a" name="Changes" comment="First commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codefy/classesabstratas/CatacteristicasDasFaixas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/classesabstratas/CatacteristicasDasFaixas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codefy/interfaces/AcoesPadrao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/interfaces/AcoesPadrao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codefy/servicos/Musica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/servicos/Musica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codefy/servicos/Podcast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/servicos/Podcast.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +34,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Antonio/Documents/ESTUDOS/projetos-carreira-tech/ProjetoJornadaBank"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Antonio/Documents/ESTUDOS/projetos-carreira-tech/ProjetoJornadaBank&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685190727974</updated>
-      <workItem from="1685190730802" duration="30479000" />
+      <workItem from="1685190730802" duration="26601000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1685221273260</created>
@@ -57,14 +60,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685221273260</updated>
     </task>
-    <task id="LOCAL-00002" summary="criação de menu">
-      <created>1685403735528</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1685403735528</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,7 +79,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <MESSAGE value="criação de menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="criação de menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
 </project>
