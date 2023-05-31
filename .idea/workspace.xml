@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6d99ff4c-5805-48c6-bf01-a96d9cdef18a" name="Changes" comment="ajustes finais">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codefy/colecoesdereproducao/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/colecoesdereproducao/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codefy/servicos/Musica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/servicos/Musica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codefy/servicos/Podcast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/servicos/Podcast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codefy/usuario/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codefy/usuario/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +42,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="69d14795-5d2c-4d2b-b3b4-842b33324b9c" name="Changes" comment="" />
+      <changelist id="6d99ff4c-5805-48c6-bf01-a96d9cdef18a" name="Changes" comment="ajustes finais" />
       <created>1685190727974</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
